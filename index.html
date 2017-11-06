@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!--[if lte IE 6]><html class="preIE7 preIE8 preIE9"><![endif]-->
+<!--[if IE 7]><html class="preIE8 preIE9"><![endif]-->
+<!--[if IE 8]><html class="preIE9"><![endif]-->
+<!--[if gte IE 9]><!--><html><!--<![endif]-->
+
+<head>
+  <title>Nevada Start</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="author" content="Nevada Start">
+  <meta name="description" content="tone.js playgound, dig it">
+  <meta name="keywords" content="web audio, web development, tone.js">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.min.css" type="text/css">
+  <link rel="stylesheet" href="css/fonts.min.css" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Audiowide|Orbitron" rel="stylesheet">
+  <script src="https://use.fontawesome.com/738b648677.js"></script>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+</head>
+<body>
+<div id="rectangle" class="container">
+  <div id="row" class="row">
+    <div id="delay-control" class="slidecontainer" class="col-6">
+      <span class="input-group-addon">Delay Time</span>
+      <input type="range" min="0" max="200" value="0" class="slider"  step= "1" id="delay-time">
+      <span class="input-group-addon">Feedback</span>
+      <input type="range" min="0" max="10" value="0" class="slider" id="feedback">
+      <span class="input-group-addon">Wet</span>
+      <input type="range" min="0" max="10" value="0" class="slider" id="wet">
+    </div>
+      <div class="slidecontainer" class="col-6">
+        <span class="input-group-addon">DISTORTION</span>
+        <input type="range" min="0" max="25" value="7" class="slider"  step= "1" id="distortion">
+        <span class="input-group-addon">PORTAMENTO</span>
+        <input type="range" min="0" max="5" value="0" class="slider" id="portamento">
+        <span class="input-group-addon">MOD INDEX</span>
+        <input type="range" min="0" max="100" value="30" class="slider" id="modulationIndex">
+      </div>
+    <!-- end screen wrapper -->
+    </div>
+    <div class="row">
+      <div id="display" class="col-12">
+        <div id="graph" class="rectangle2"></div>
+        <div id="cassette-wrapper" class="rectangle2">
+          <p id="screen-text">Hello Earthling</p>
+        </div>
+      </div>
+    </div>
+  <div id="row3" class="row">
+    <div id="oscillator-type" class="radio-container col-6">
+      <h6> Oscillator Wave Type</h6>
+      <input type="radio" value="sine" name="set-1" id="one-one" checked/><label for="one-one"><span class="icon-sine"></span></label>
+      <input type="radio" value="square" name="set-1" id="one-two" /><label for="one-two"><span class="icon-square"></span></label>
+      <input type="radio" value="triangle" name="set-1" id="one-three" /><label for="one-three"><span class="icon-triangle"></span></label>
+      <input type="radio" value="sawtooth" name="set-1" id="one-four" /><label for="one-four"><span class="icon-sawtooth"></span></label>
+    </div>
+    <div id="mod-oscillator-type" class="radio-container col-6">
+      <h6>Harmonicity</h6>
+      <input type="radio" value="0.5" name="set-2" id="two-one" /><label for="two-one">1/2</label>
+      <input type="radio" value="1" name="set-2" id="two-two" /><label for="two-two">1:1</span></label>
+      <input type="radio" value="2" name="set-2" id="two-three" /><label for="two-three">2:1</span></label>
+      <input type="radio" value="3" name="set-2" id="two-four" checked/><label for="two-four">3:1</span></label>
+    </div>
+  </div> <!-- end waveform row -->
+
+  <div class="header-text row">
+    <h6 class="col-12"> FM Synth Control</h6>
+  </div>
+    <div id="row2" class="row">
+
+        <div class="button-wrapper col-12">
+          <div id="synthC" class="buttonRobot pitch">C2</div>
+          <div id="synthD" class="buttonRobot pitch">D2</div>
+          <div id="synthE" class="buttonRobot pitch">E2</div>
+          <div id="synthF" class="buttonRobot pitch">F2</div>
+          <div id="synthG" class="buttonRobot pitch">G2</div>
+          <div id="synthA" class="buttonRobot pitch">A2</div>
+          <div id="synthB" class="buttonRobot pitch">B2</div>
+          <div id="synthHighC" class="buttonRobot pitch">C3</div>
+        </div>
+    </div>
+    <div class=" header-text row">
+      <h6 class="col-12"> Synth Percussion</h6>
+    </div>
+      <div class="row">
+        <div class="button-wrapper col-12">
+          <div id="kick" class="buttonRobot percussion" >Kick</div>
+          <div id="snare" class="buttonRobot percussion">Snare</div>
+          <div id="conga" class="buttonRobot percussion" >Conga</div>
+          <div id="bell" class="buttonRobot percussion" >Bell</div>
+          <div id="pluck" class="buttonRobot percusssion" >Pluck</div>
+        </div>
+        </div>
+        <div class=" header-text row">
+          <h6 class="col-12"> Drum Loops</h6>
+        </div>
+        <div class="row">
+        <div class="button-wrapper col-12">
+          <div id="drum1" class="buttonRobot">1</div>
+          <div id="drum2" class="buttonRobot">2</div>
+          <div id="drum3" class="buttonRobot">3</div>
+          <div id="drum4" class="buttonRobot">4</div>
+        </div>
+        </div>
+    </div>
+  <!-- End container -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="libraries/Tone.min.js"></script>
+  <script src="scripts/scripts.min.js"></script>
+</body>
+
+</html>
